@@ -1,8 +1,12 @@
-title Follow Your Dreams [version1]
+title Follow Your Dreams [version2]
 author Richard Flores
 homepage https://github.com/rogue64
 
 color_palette famicom
+
+
+
+norepeat_action;
 
 background_color #0a001f
 text_color #8c4700
@@ -65,6 +69,8 @@ fakeWall
 11111
 00010
 wallbackground
+#0a001f
+finalwall
 #0a001f
 
 ekey
@@ -146,7 +152,20 @@ player4left
 20055
 .4455
 .4..4
-
+player5right
+#00cc66 pink black #8c0000 #a52a2a brown
+.00.3
+011.3
+55002
+5544.
+4..4.
+player5left
+#00cc66 pink black #8c0000 #a52a2a brown
+3.00.
+3.110
+20055
+.4455
+.4..4
 
 deadplayer1
 darkred black
@@ -336,8 +355,23 @@ yellow orange #262626
 
 annoyingguard1
 red
+annoyingguard1blood
+blue #262626
+10111
+11001
+10000
+10000
+01101
 annoyingguard2
 blue
+annoyingguard2blood
+red #262626
+10111
+11001
+10000
+10000
+01101
+
 mom
 #ffc0cb #ff748c pink black
 .333.
@@ -361,7 +395,211 @@ lightblue black
 00001
 11101
 
+root1
+brown darkbrown
+01001
+10100
+10100
+01001
+01001
+root1r
+brown darkbrown
+0....
+00...
+000..
+11000
+00101
+root1l
+brown darkbrown
+....0
+...00
+..000
+.0011
+10100
+tree1
+brown darkbrown
+01001
+10100
+10100
+01001
+01001
+tree2
+brown darkbrown
+01001
+10100
+10100
+01001
+01001
+tree3
+brown darkbrown
+01001
+10100
+10100
+01001
+01001
+tree4
+green darkgreen #0a001f
+01110
+00000
+00000
+01001
+10010
+tree4r
+green darkgreen #0a001f
+00000
+11100
+00000
+00110
+00000
+tree4l
+green darkgreen #0a001f
+00000
+11100
+00000
+00110
+00000
+tree4r2
+green darkgreen #0a001f
+11112
+00001
+01001
+00001
+10101
+tree4l2
+green darkgreen #0a001f
+21111
+10000
+10010
+10000
+10101
+tree3r
+green darkgreen #0a001f
+00101
+00001
+01001
+01012
+22222
+tree3l
+green darkgreen #0a001f
+10100
+10000
+10010
+21010
+22222
+tree5
+green darkgreen #0a001f
+21112
+10001
+10001
+00100
+00010
+tree5r
+green darkgreen #0a001f
+22222
+22222
+11112
+00001
+00001
+tree5l
+green darkgreen #0a001f
+22222
+22222
+21111
+10000
+10000
+tinyroot1
+brown darkbrown #0a001f
+.001.
+.011.
+.001.
+.011.
+.001.
+tinytree1
+brown darkbrown #0a001f
+20012
+20112
+20012
+20112
+20012
+tinytree2
+green darkgreen #0a001f
+21112
+10001
+10001
+10001
+21112
+
+gigaslashSheathe
+#8c0000 black white orange pink
+.....
+..133
+.303.
+1303.
+13333
+gcal
+orange #8c0000 black
+..22.
+..10.
+00110
+.1010
+.0..1
+
+randomFriend
+transparent
+friend1
+pink darkred yellow darkblue
+.111.
+.000.
+22222
+23332
+.0.0.
+zfriend1
+green darkred yellow darkblue
+.111.
+.000.
+22222
+23332
+.0.0.
+friend2
+pink black white darkblue
+.111.
+.000.
+22222
+23332
+.3.3.
+zfriend2
+green black white darkblue
+.111.
+.000.
+22222
+23332
+.3.3.
+friend3
+pink black red black
+.111.
+10001
+22222
+23332
+.3.3.
+zfriend3
+green black red black
+.111.
+10001
+22222
+23332
+.3.3.
+
+bloodsplat
+#8c0000
+.0...
+..00.
+.0000
+.0000
+0..0.
+
 checkpoint1
+transparent
+checkpoint2
 transparent
 
 sentryscanner
@@ -390,6 +628,12 @@ message1
 transparent
 message2
 transparent
+message3
+transparent
+message4
+transparent
+message5
+transparent
 endflag
 transparent
 
@@ -404,6 +648,7 @@ f = flag
 # = Wall
 ! = fakewall
 ` = wallbackground
+9 = finalwall
 1 = Player1
 2 = player2
 3 = player3right
@@ -427,15 +672,20 @@ h = sentry1left and background2
 j = sentry1down and background2
 u = sentry1up and background2
 ~ = gold and background2
-g = gold2 and background2
+g = gigaslashSheathe
 c = checkpoint1 and background2
+v = checkpoint2
 $ = sentryscanner
 ? = goldscanner
 a = annoyingguard1
 b = annoyingguard2 
 d = mom
 m = initmessage and background2
+n = initmessage
 w = warp1 and initmessage
+r = root1
+y = tinyroot1
+: = randomfriend
 
 
 sentry = sentry1right or sentry1up or sentry1left or sentry1down
@@ -444,8 +694,9 @@ exit = exit1 or flag or exit2
 crate = crate1 or crate2 or crate3
 player3 = player3right or player3left
 player4 = player4right or player4left
+player5 = player5right or player5left
 
-player = player1 or player2 or player3 or player4
+player = player1 or player2 or player3 or player4 or player5
 enemies = zombie1 or scientist1 or scientist2
 dead = deadplayer1 or deadplayer2 or deadplayer3right or deadplayer3left or deadplayer3rightblade or deadplayer3leftblade or deadplayer4right or deadplayer4left or deadplayer4rightshield or deadplayer4leftshield
 sign = Ekey or Xkey or Ikey or Tkey or dwn
@@ -457,12 +708,15 @@ scanners = sentryscanner or goldscanner
 annoyingguards = annoyingguard1 or annoyingguard2 
 npc = annoyingguards or mom or momwin
 sentrydeath = sentrydeath1 or sentrydeath2 or sentrydeath3 or sentrydeath4 or sentrydeath5 or sentrydeath6 or sentrydeath7
-messages = sentrydeath or initmessage or message1 or message2
+messages = sentrydeath or initmessage or message1 or message2 or message3 or message4 or message5
 warps = warp1
 walls = wall or fakewall or wallbackground
 blocker = walls or crate
 obstacle = blocker or sentry or stopper1
-
+trees = root1 or root1r or root1l or tree1 or tree2 or tree3 or tree4 or tree4r or tree4l or tree4r2 or tree4l2 or tree3r or tree3l or tree5 or tree5r or tree5l or tinyroot1 or tinytree2 or tinytree1
+george = gigaslashSheathe or gcal
+friends = friend1 or friend2 or friend3
+zfriends = zfriend1 or zfriend2 or zfriend3
 
 =======
 SOUNDS
@@ -471,6 +725,9 @@ SOUNDS
 showmessage 43979706
 sfx1 43979706
 sfx2 39624702
+sfx3 65686109 (knocking)
+sfx4 48673902 (friend death)
+sfx5 37557302 (enemies death)
 gold destroy 92886900
 gold2 destroy 92886900
 
@@ -479,8 +736,8 @@ COLLISIONLAYERS
 ================
 
 Background
-Target, exit, gate, stopper1, checkpoint1, warps
-Player, Crate, Walls, enemies, sentry, gold, npc, gold2
+Target, exit, gate, stopper1, checkpoint1, warps, checkpoint2, bloodsplat, annoyingguard1blood, annoyingguard2blood
+Player, Crate, Walls, enemies, sentry, gold, npc, gold2, trees, george, randomfriend, friends, finalwall, zfriends
 dead
 sign, laser1cross
 laser1hor
@@ -492,20 +749,26 @@ endflag
 RULES     
 ======     
 
-[ >  Player | Crate ] -> [ > Player | > Crate ]    
+[ >  Player | Crate ] -> [ > Player | > Crate ]   
+
+[ > Player | walls ] -> CANCEL
+[ > crate | walls ] -> CANCEL
 
 
 [ left player3 ] -> [ left player3left ]  
 [ right player3 ] -> [ right player3right ]
 [ left player4 ] -> [ left player4left ]
 [ right player4 ] -> [ right player4right ]
+[ left player5 ] -> [ left player5left ]
+[ right player5 ] -> [ right player5right ]
 
-[> player | gold ] -> [ | player background2 ] message Gold +1
+[> player | gold ] -> [ | player background2 ] message *Gold +1*
 [> player | gold2 ] -> [ | player background2 ] message Gold +1
 
 ( "zombies" )
 
 [ player | ... | enemies ] -> [ player | ... | < enemies ]
+[ player | ... | zfriends ] -> [ player | ... | < zfriends ]
 [ > enemies | ... | crate ] -> [ enemies | ... | crate ]
 
 [ > enemies | gate ] -> [ enemies | gate ]
@@ -585,24 +848,39 @@ late left [ laser player3left | ] -> [ laser deadplayer3left | deadplayer3leftbl
 right [ sentryscanner | ... | no initmessage ] [ fakewall ] -> [ sentryscanner | ... | no initmessage ] [ warp1 ]
 right [ sentryscanner | ... | warp1 ] [ sentryscanner | ... | initmessage ] -> [ sentryscanner | ... | fakewall ] [ sentryscanner | ... | initmessage ]
 
-up [ sentryscanner | ... | no gold2 ] [ mom ] -> [ sentryscanner | ... | no gold2 ] [ momwin ]
-up [ sentryscanner | ... | momwin ] [ sentryscanner | ... | gold2 ] -> [ sentryscanner | ... | mom ] [ sentryscanner | ... | gold2 ]
+up [ sentryscanner | ... | no gigaslashsheathe ] [ mom ] -> [ sentryscanner | ... | no gigaslashsheathe ] [ momwin ]
+up [ sentryscanner | ... | momwin ] [ sentryscanner | ... | gigaslashsheathe ] -> [ sentryscanner | ... | mom ] [ sentryscanner | ... | gigaslashsheathe ]
+
+up [ sentryscanner | ... | gcal ] [ friend1 ] -> [ sentryscanner | ... | gcal ] [ zfriend1 ]
+up [ sentryscanner | ... | gcal ] [ friend2 ] -> [ sentryscanner | ... | gcal ] [ zfriend2 ]
+up [ sentryscanner | ... | gcal ] [ friend3 ] -> [ sentryscanner | ... | gcal ] [ zfriend3 ]
+up [ sentryscanner | ... | initmessage | gcal ] -> [ sentryscanner | ... | | gcal ] message Lost-Soul: You just abandonded us.. for your own dreams! Left us to stay the same.. doing nothing. Maybe we could've helped.. maybe we could've shared your dream.
+
+[action player5 | gcal ] -> [ player5 | gcal ] message Lost-Soul: It's too late now..
 
 
 
 
-late right [ player4 warp1 | ... | warp1 | ] -> [ warp1 | ... | warp1 | player4 ] 
-late left [ player4 warp1 | ... | warp1 | ] -> [ warp1 | ... | warp1 | player4 ] 
-late down [ player4 warp1 | ... | warp1 | ] -> [ warp1 | ... | warp1 | player4 ] 
-late up [ player4 warp1 | ... | warp1 | ] -> [ warp1 | ... | warp1 | player4 ]
+late right [ player warp1 | ... | warp1 | ] -> [ warp1 | ... | warp1 | player ] 
+late left [ player warp1 | ... | warp1 | ] -> [ warp1 | ... | warp1 | player ] 
+late down [ player warp1 | ... | warp1 | ] -> [ warp1 | ... | warp1 | player ] 
+late up [ player warp1 | ... | warp1 | ] -> [ warp1 | ... | warp1 | player ]
 
 
 
-[ orthogonal player4 | mom | message1 ] -> [ player4 | mom | message2 ] message No. They'll understand when I achieve my dreams.
-late [ player4 | mom | initmessage ] -> [ player4 | mom | message1 ] message "Don't you miss your friends?"
+([ orthogonal player4 | mom | message1 ] -> [ player4 | mom | message2 ] message No. They'll understand when I achieve my dreams.
+late [ player4 | mom | initmessage ] -> [ player4 | mom | message1 ] message "Don't you miss your friends?")
 
-[ action player4 | mom | message2 ] -> [ player4 | mom | message2 ] message Crazy Woman: I only move for gold.
-late [ player4 checkpoint1 | initmessage ] -> [ player4 checkpoint1 | ] message + Ye Olde Friendly Towne + 
+[ action player4 | mom ] -> [ player4 | mom ] message "Don't forget to visit grandpa!"
+
+
+
+[ player4 ][ message3 ] -> [ player4 ][ message5 ] message Yeah. I think I have enough time tomorrow. I'll drive by then.
+[ player4 ][message2 ] -> [ player4 ][message3] message "Hey don't forget to go visit grandpa soon!"
+late [ player4 ] [message1] -> [ player4 ] [message2] sfx3 message * Knock Knock *
+
+late [ player4 checkpoint1 | initmessage ][] -> [ player4 checkpoint1 | ][message1] message + Ye Olde Friendly Towne + 
+late [ player4 checkpoint2 ] -> [ player4 checkpoint2] message + Ye "Old Spot" + 
 
 
 
@@ -614,10 +892,40 @@ late [ player4 checkpoint1 | initmessage ] -> [ player4 checkpoint1 | ] message 
 [ > enemies | player4left | ] -> [ enemies deadplayer3leftblade | deadplayer4left | deadplayer4leftshield ] 
 
 
+up [tinyroot1 | ] -> [tinyroot1 | tinytree1]
+up [tinytree1 | ] -> [tinytree1 | tinytree2]
+
+up [ root1 | ] -> [root1 | tree1] 
+right [root1| ] -> [ root1 | root1r ]
+left [root1 | ] -> [ root1 | root1l ]
+up [ tree1 | ] -> [tree1 | tree2 ] 
+up [ tree2 | ] -> [tree2 | tree3 ] 
+up [ tree3 | ] -> [tree3 | tree4 ] 
+right [tree4 | ] -> [ tree4 | tree4r ]
+right [ tree4r | ] -> [ tree4r | tree4r2 ]
+left [tree4 | ] -> [tree4 | tree4l ]
+left [ tree4l | ] -> [ tree4l | tree4l2 ]
+right [tree3 | ] -> [ tree3 | tree3r ] 
+left [tree3 | ] -> [ tree3 | tree3l ]
+up [ tree4 | ] -> [ tree4 | tree5 ]
+right [ tree5 | ] -> [ tree5 | tree5r ]
+left [ tree5 | ] -> [ tree5 | tree5l ]
+
+[randomfriend] -> [random friends]
+
+[ action player4right | gigaslashSheathe ] -> [ player5right | gcal ] message You recieved the legendary Gigaslash Blade! Go kill anything in your way, you're invincible!
+[ action player4left | gigaslashSheathe ] -> [ player5left | gcal ] message You recieved the legendary Gigaslash Blade! Go kill anything in your way, you're invincible!
+[ action player5 | zfriends ] -> [ player5 | bloodsplat ] sfx4
+[ action player5 | enemies ] -> [ player5 | bloodsplat ] sfx5
+[ action player5 | annoyingguard1 ] -> [ player5 | annoyingguard1blood ] sfx5 message Bluebot: DAMN YOU PUNY PERSON! BROTHER!.. help me
+[ action player5 | annoyingguard2 ] -> [ player5 | annoyingguard2blood ] sfx5 message Redbot: .. why would you do this? brother.. MAKE SURE LORD GIGASLASH MAKES HIM PAY!
+
 (real win conditions and checkpoints)
 
 [ player2 flag ] -> win
-[ player checkpoint1 ] -> checkpoint
+[ player checkpoint1 ] -> [player] checkpoint
+[ player checkpoint2 ] -> [player] checkpoint
+
 late [ player2 exit ] -> win
 late [ player1 exit ] -> win
 
@@ -627,7 +935,12 @@ late [ player3 exit ] -> win
 
 up [ sentryscanner | ... | gold2 ][ ] -> [ sentryscanner | ... | gold2 ][ endflag ]
 
-[ action player | momwin ] -> win
+[ > player5 | finalwall ] -> [player5 | finalwall ] sfx3 win
+
+(change of plans, no longer a win condition)
+[ action player | momwin ] -> [player | momwin] message "Okay it's tomorrow! Why haven't you gone to visit him yet?"
+
+
 
 ==============
 WINCONDITIONS
@@ -690,7 +1003,7 @@ message Game 4: Theme or Moral?
 message "But don't worry about that though, buddy. You haven't gone out with us in forever."
 message "We were thinking of going to the old spot and figuring out what movie to go see. Or just hang and be stupid kids. Wanna come?"
 message No. I need to work.
-message Game 7: Assassinate Guards, Take Treasure
+message Game 7: Make Money, No Matter What
 message Use the Spacebar to attack guards and/or pass time
 
 #######################################
@@ -698,11 +1011,11 @@ message Use the Spacebar to attack guards and/or pass time
 ###############&,,,,,&j&,,,,##########$
 ###############k&,,,,,&,,,,,##########$
 ....z################,,,##,,###########
-...s.##########,,,####,###,,{##########
-....zE#######&#,,,####,################
-.....###k,,,,,&c,",,,,,,,,&j##########$
-....sX#######&#,,,,,,,,,,,,&###########
-.....########,#,,,,,,,,,,,,,###########
+...s.###########,,####,###,c{##########
+....zE#######&##,,####,################
+.....###k,,,,,&c",,,,,,,,,&j##########$
+....sX#######&##,,,,,,,,,,,&###########
+.....########,##,,,,,,,,,,,,###########
 ..z.zI#######,########,################
 ...s.########,######k,,,,,,,,j########$
 .z...T,,,,,,,,######,,~,~,~,~,########?
@@ -730,40 +1043,44 @@ message .. Yeah.
 message Game 9: Gigaslash Chronicles 2
 message Press Spacebar to talk and/or pass time
 
-````````````````````````````
-````````````````````````````
-````````````````````````````
-````````````````````````````
-````````````````````````````
-```````.z................,..
-```````.s.s.............,g,.
-```````.s.s...#..........,..
-```````.s.s.*..##...........
-```````#####..*...#.########
-```````.......######k,,,,,j#
-``````wd....m#######,,~,~,,#
-```````....,c##{####u,,,,,h#
-````````````w```````````````
-````````````````````````````
-````````````````````````````
-````````````````````````````
-.......$.................$..
-............................
-............................
-............................
-$......#####!#########......
-.......#,,,,,,,,,,,,,#......
-.......#,,,,,,,,,,,,,#......
-.......#,,,,,,,,,,,,,#######
-$......#,,,,,,,,,,,,,,,,,,am
-$......#,,,,,,4,,,,,,,,,,,bm
-.......#,,,,,,,,,,,,,#######
-.......#,,,,,,,,,,,,,#......
-.......#,,,,,,,,,,,,,#z.....
-.......###############......
-............................
-............................
-............................
+````````````````````````````````````````````````````````
+````````````````````````````````````````````````````````
+````````````````````````````````````````````````````````
+````````````````````````````````````````````````````````
+````````````````````````````````````````````````````````
+````````````````````````````````````````.y.y.y....r..```
+````````````````````````````````````````....:.....g..```
+````````````````````````````````````````..:...:...n..```
+````````````````````````````````````````...:.:.......```
+```````.z................,..````````````.```````````````
+```````.s.s.............,w,.```````````wv```````````````
+```````.s.s...#..........,..````````````````````````````
+```````.s.s.*..##...........````````````````````````````
+```````#####..*...#.########````````````````````````````
+```````.......######k,,,,,j#````````````````````````````
+```````d....m#######,,~,~,,#````````````````````````````
+```````....,c##{####u,,,,,h#````````````````````````````
+````````````w```````````````````````````````````````````
+````````````````````````````````````````````````````````
+````````````````````````````````````````````````````````
+````````````````````````````````````````````````````````
+.......$....................``````````````````````$`````
+............................````````````````````````````
+............................````````````````````````````
+............................````````````````````````````
+$......#####!#########......````````````````````````````
+.......#,,,,,,,,,,,,,#......````````````````````````````
+.......#,,,,,,,,,,,,,#......````````````````````````````
+.......#,,,,,,,,,,,,,#######````````````````````````````
+$......#,,,,,,,,,,,,,,,,,,am9```````````````````````````
+$......#,,,,,,4,,,,,,,,,,,bm9```````````````````````````
+.......#,,,,,,,,,,,,,#######````````````````````````````
+.......#,,,,,,,,,,,,,#......````````````````````````````
+.......#,,,,,,,,,,,,,#z.....````````````````````````````
+.......###############......````````````````````````````
+............................````````````````````````````
+............................````````````````````````````
+............................````````````````````````````
 
 message *Knock Knock*
 message "Hey its time to go... We gotta say bye to grandpa."
@@ -796,16 +1113,16 @@ message Dedicated to Abuelito David and G-Cal
 ...........................
 ...........................
 ......###############......
-......#.............#......
-......#.............#......
-......#.............#......
-......#.............#......
-......#...3.........#......
+......#..:..........#......
+......#..:..........#......
+......#..:...:......#......
+......#..:..........#......
+......#...3....y.r..#......
 ......#.............#......
 ......#.............#......
 ......#.............#z.....
 ......###############......
 ...........................
 ...........................
-...........................
-)
+...........................)
+
